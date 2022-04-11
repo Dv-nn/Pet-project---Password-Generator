@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+* {
+	box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+	background-color: #ecf0f3;
+	color: #333;
+  font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	min-height: 100vh;
+  position: relative;
+}
+p {
+	margin: 5px 0;
+}
+h2 {
+	margin: 0 0 20px;
+	text-align: center;
+}
+input[type=checkbox] {
+	margin-right: 0;
+}
+
+.container {
+  border-radius: 10px;
+	background-color: #ecf0f3;
+	box-shadow: 13px 13px 20px #cbced1,
+              -13px -13px 20px #fff;
+	padding: 20px 20px 30px 20px;
+	width: 350px;
+	max-width: 100%;
+}
+.result-container {
+	box-shadow: inset 8px 8px 8px #cbced1,
+              inset -8px -8px 8px #fff;         
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	position: relative;
+	font-size: 18px;
+	letter-spacing: 1px;
+	padding: 12px 10px;
+	height: 50px;
+	width: 100%;
+}
+.result-container #result {
+  word-wrap: break-word;
+	max-width: calc(100% - 40px);
+}
+.result-container .btn {
+	font-size: 20px;
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	height: 40px;
+	width: 40px;
+}
+.btn {
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	padding: 8px 12px;
+	background-color: #1053cf;
+  border-radius: 5px;
+}
+.btn:hover {
+  transform: scale(0.96);
+}
+.btn-large {
+	display: block;
+	width: 100%;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 5px 5px 7px rgba(0,0,0,0.4);
+}
+.btn-large:hover {
+  transform: scale(0.99);
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+}
+.setting {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 20px 0;
+}
+.setting input[type="checkbox"],
+.setting input[type="number"]
+{
+  appearance: none;
+  -webkit-appearance: none;
+  height: 26px;
+  width: 32px;
+  box-shadow: inset 8px 8px 8px #cbced1,
+              inset -8px -8px 8px #fff;  
+              border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.setting input[type="checkbox"]:after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+  font-size: 25px;
+  content: "\f00c";
+  color: #1053cf;
+  display: none;
+}
+.setting input[type="checkbox"]:hover,
+.setting input[type="checkbox"]:checked 
+ {
+  background-color: #cbced1;
+  box-shadow: none;
+}
+.setting input[type="checkbox"]:checked:after {
+  display: block;
+}
+.setting input[type="number"]
+{
+  height: 33px;
+  width: 58px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #1053cf;
+  padding: 0 8px;
+}
+
+
+#notification {
+  visibility: hidden;
+  min-width: 250px; 
+  margin-left: -125px; 
+  background-color: #1053cf;
+  color: #fff; 
+  text-align: center;
+  border-radius: 5px;
+  padding: 16px; 
+  position: fixed;
+  left: 80%; 
+  top: 28%;
+  z-index: 1;
+}
+#notification.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: 28%; opacity: 1;}
+}
+
+@keyframes fadeout {
+  from {top: 28%; opacity: 1;}
+  to {top: 0; opacity: 0;}
+}
